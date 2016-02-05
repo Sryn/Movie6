@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e9fb7c4e9cd446128e2d211a00113ec8" Name="Diagram1">
+        <EntityTypeShape EntityType="MovieTheaterModel.Booking" Width="1.5" PointX="7.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.BookingDetail" Width="1.5" PointX="9.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.Customer" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.Movie" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.PaymentType" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.Room" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.RoomMovie" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.RoomType" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.Seat" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.SeatMovie" Width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.Theater" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieTheaterModel.User" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="MovieTheaterModel.FK_Booking_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieTheaterModel.FK_Booking_PaymentType" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieTheaterModel.FK_Booking_RoomMovie" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieTheaterModel.FK_BookingDetail_Booking" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieTheaterModel.FK_RoomMovie_Movie" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieTheaterModel.FK_Room_RoomType" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieTheaterModel.FK_Room_Theater" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieTheaterModel.FK_RoomMovie_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieTheaterModel.FK_Seat_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieTheaterModel.FK_SeatMovie_RoomMovie" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

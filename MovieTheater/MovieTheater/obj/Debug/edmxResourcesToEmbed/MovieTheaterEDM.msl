@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MovieTheaterModelStoreContainer" CdmEntityContainer="MovieTheaterEntities">
+    <EntitySetMapping Name="Booking">
+      <EntityTypeMapping TypeName="MovieTheaterModel.Booking">
+        <MappingFragment StoreEntitySet="Booking">
+          <ScalarProperty Name="Booking_ID" ColumnName="Booking_ID" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="RoomMovie_ID" ColumnName="RoomMovie_ID" />
+          <ScalarProperty Name="PaymentType_ID" ColumnName="PaymentType_ID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
+          <ScalarProperty Name="Card_Name" ColumnName="Card_Name" />
+          <ScalarProperty Name="Card_Expiring_Month" ColumnName="Card_Expiring_Month" />
+          <ScalarProperty Name="Card_Expiring_Year" ColumnName="Card_Expiring_Year" />
+          <ScalarProperty Name="Card_Secret_Code" ColumnName="Card_Secret_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookingDetail">
+      <EntityTypeMapping TypeName="MovieTheaterModel.BookingDetail">
+        <MappingFragment StoreEntitySet="BookingDetail">
+          <ScalarProperty Name="BookingDetail_ID" ColumnName="BookingDetail_ID" />
+          <ScalarProperty Name="Booking_ID" ColumnName="Booking_ID" />
+          <ScalarProperty Name="Seat_ID" ColumnName="Seat_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer">
+      <EntityTypeMapping TypeName="MovieTheaterModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Login_ID" ColumnName="Login_ID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
+          <ScalarProperty Name="Create_Datetime" ColumnName="Create_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movie">
+      <EntityTypeMapping TypeName="MovieTheaterModel.Movie">
+        <MappingFragment StoreEntitySet="Movie">
+          <ScalarProperty Name="Movie_ID" ColumnName="Movie_ID" />
+          <ScalarProperty Name="Movie_Name" ColumnName="Movie_Name" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="PictureURL" ColumnName="PictureURL" />
+          <ScalarProperty Name="IMDB_Link" ColumnName="IMDB_Link" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <ScalarProperty Name="Ratings" ColumnName="Ratings" />
+          <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
+          <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentType">
+      <EntityTypeMapping TypeName="MovieTheaterModel.PaymentType">
+        <MappingFragment StoreEntitySet="PaymentType">
+          <ScalarProperty Name="PaymentType_ID" ColumnName="PaymentType_ID" />
+          <ScalarProperty Name="PaymentType_Name" ColumnName="PaymentType_Name" />
+          <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
+          <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Room">
+      <EntityTypeMapping TypeName="MovieTheaterModel.Room">
+        <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="Room_ID" ColumnName="Room_ID" />
+          <ScalarProperty Name="Room_Name" ColumnName="Room_Name" />
+          <ScalarProperty Name="Theater_ID" ColumnName="Theater_ID" />
+          <ScalarProperty Name="RoomType_ID" ColumnName="RoomType_ID" />
+          <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
+          <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomMovie">
+      <EntityTypeMapping TypeName="MovieTheaterModel.RoomMovie">
+        <MappingFragment StoreEntitySet="RoomMovie">
+          <ScalarProperty Name="RoomMovie_ID" ColumnName="RoomMovie_ID" />
+          <ScalarProperty Name="Room_ID" ColumnName="Room_ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Movie_ID" ColumnName="Movie_ID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+          <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
+          <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomType">
+      <EntityTypeMapping TypeName="MovieTheaterModel.RoomType">
+        <MappingFragment StoreEntitySet="RoomType">
+          <ScalarProperty Name="RoomType_ID" ColumnName="RoomType_ID" />
+          <ScalarProperty Name="RoomType_Name" ColumnName="RoomType_Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
+          <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seat">
+      <EntityTypeMapping TypeName="MovieTheaterModel.Seat">
+        <MappingFragment StoreEntitySet="Seat">
+          <ScalarProperty Name="Seat_ID" ColumnName="Seat_ID" />
+          <ScalarProperty Name="Seat_Name" ColumnName="Seat_Name" />
+          <ScalarProperty Name="Room_ID" ColumnName="Room_ID" />
+          <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
+          <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
+          <ScalarProperty Name="Rows" ColumnName="Rows" />
+          <ScalarProperty Name="Columns" ColumnName="Columns" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SeatMovie">
+      <EntityTypeMapping TypeName="MovieTheaterModel.SeatMovie">
+        <MappingFragment StoreEntitySet="SeatMovie">
+          <ScalarProperty Name="SeatMovie_ID" ColumnName="SeatMovie_ID" />
+          <ScalarProperty Name="RoomMovie_ID" ColumnName="RoomMovie_ID" />
+          <ScalarProperty Name="Seat_ID" ColumnName="Seat_ID" />
+          <ScalarProperty Name="Occupied" ColumnName="Occupied" />
+          <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
+          <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MovieTheaterModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Theater">
+      <EntityTypeMapping TypeName="MovieTheaterModel.Theater">
+        <MappingFragment StoreEntitySet="Theater">
+          <ScalarProperty Name="Theater_ID" ColumnName="Theater_ID" />
+          <ScalarProperty Name="Theater_Name" ColumnName="Theater_Name" />
+          <ScalarProperty Name="Theater_Address" ColumnName="Theater_Address" />
+          <ScalarProperty Name="Theater_Phone_No" ColumnName="Theater_Phone_No" />
+          <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
+          <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="MovieTheaterModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,14 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Staff.master.cs" Inherits="MovieTheater.Staff" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="Styles/StaffStyles.css" />
+    <asp:ContentPlaceHolder ID="headStaff" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" runat="server">
+    <div id="header" class="container" style="height:100px; background-color:blue;"></div>
+    <div id="menuBar" class="container" style="height:30px; background-color:red;"></div>
+    <div id="content" class="container" style="background-color:#F6F6F6; padding-bottom:20px;">
+        <asp:ContentPlaceHolder ID="bodyStaff" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
