@@ -7,15 +7,8 @@
     <Property Name="Booking_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Customer_ID" Type="Int32" Nullable="false" />
     <Property Name="RoomMovie_ID" Type="Int32" Nullable="false" />
-    <Property Name="PaymentType_ID" Type="Int32" Nullable="false" />
     <Property Name="Amount" Type="Double" Nullable="false" />
-    <Property Name="Card_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Card_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Card_Expiring_Month" Type="Int32" />
-    <Property Name="Card_Expiring_Year" Type="Int32" />
-    <Property Name="Card_Secret_Code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Customer" Relationship="Self.FK_Booking_Customer" FromRole="Booking" ToRole="Customer" />
-    <NavigationProperty Name="PaymentType" Relationship="Self.FK_Booking_PaymentType" FromRole="Booking" ToRole="PaymentType" />
     <NavigationProperty Name="RoomMovie" Relationship="Self.FK_Booking_RoomMovie" FromRole="Booking" ToRole="RoomMovie" />
     <NavigationProperty Name="BookingDetail" Relationship="Self.FK_BookingDetail_Booking" FromRole="Booking" ToRole="BookingDetail" />
   </EntityType>
@@ -59,16 +52,6 @@
     <Property Name="Update_Datetime" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="RoomMovie" Relationship="Self.FK_RoomMovie_Movie" FromRole="Movie" ToRole="RoomMovie" />
   </EntityType>
-  <EntityType Name="PaymentType">
-    <Key>
-      <PropertyRef Name="PaymentType_ID" />
-    </Key>
-    <Property Name="PaymentType_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PaymentType_Name" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Active_Indicator" Type="Boolean" Nullable="false" />
-    <Property Name="Update_Datetime" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="Booking" Relationship="Self.FK_Booking_PaymentType" FromRole="PaymentType" ToRole="Booking" />
-  </EntityType>
   <EntityType Name="Room">
     <Key>
       <PropertyRef Name="Room_ID" />
@@ -77,6 +60,7 @@
     <Property Name="Room_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Theater_ID" Type="Int32" Nullable="false" />
     <Property Name="RoomType_ID" Type="Int32" Nullable="false" />
+    <Property Name="Seat_Pattern" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Active_Indicator" Type="Boolean" Nullable="false" />
     <Property Name="Update_Datetime" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="RoomType" Relationship="Self.FK_Room_RoomType" FromRole="Room" ToRole="RoomType" />
@@ -177,18 +161,6 @@
       </Principal>
       <Dependent Role="Booking">
         <PropertyRef Name="Customer_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Booking_PaymentType">
-    <End Role="PaymentType" Type="Self.PaymentType" Multiplicity="1" />
-    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PaymentType">
-        <PropertyRef Name="PaymentType_ID" />
-      </Principal>
-      <Dependent Role="Booking">
-        <PropertyRef Name="PaymentType_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -293,7 +265,6 @@
     <EntitySet Name="BookingDetail" EntityType="Self.BookingDetail" />
     <EntitySet Name="Customer" EntityType="Self.Customer" />
     <EntitySet Name="Movie" EntityType="Self.Movie" />
-    <EntitySet Name="PaymentType" EntityType="Self.PaymentType" />
     <EntitySet Name="Room" EntityType="Self.Room" />
     <EntitySet Name="RoomMovie" EntityType="Self.RoomMovie" />
     <EntitySet Name="RoomType" EntityType="Self.RoomType" />
@@ -304,10 +275,6 @@
     <EntitySet Name="User" EntityType="Self.User" />
     <AssociationSet Name="FK_Booking_Customer" Association="Self.FK_Booking_Customer">
       <End Role="Customer" EntitySet="Customer" />
-      <End Role="Booking" EntitySet="Booking" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Booking_PaymentType" Association="Self.FK_Booking_PaymentType">
-      <End Role="PaymentType" EntitySet="PaymentType" />
       <End Role="Booking" EntitySet="Booking" />
     </AssociationSet>
     <AssociationSet Name="FK_Booking_RoomMovie" Association="Self.FK_Booking_RoomMovie">

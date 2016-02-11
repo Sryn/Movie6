@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -45,6 +48,13 @@
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -56,6 +66,33 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -63,23 +100,35 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CRegister.aspx" />
     <Content Include="default.aspx" />
-    <Content Include="genChkBoxTest.aspx" />
-    <Content Include="genChkBoxTest_wMstrPage.aspx" />
-    <Content Include="Images\ChairIconV04.png" />
-    <Content Include="Images\ChairIconV06.png" />
+    <Content Include="Images\calendar.png" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\edit1.png" />
     <Content Include="Images\movie.ico" />
-    <Content Include="Movie.aspx" />
-    <Content Include="PanelTestPage.aspx" />
-    <Content Include="SeatTestV01.aspx" />
-    <Content Include="StaffTestPage.aspx" />
+    <Content Include="Images\next.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="MovieDetail.aspx" />
+    <Content Include="MovieList.aspx" />
+    <Content Include="MoviePage.aspx" />
+    <Content Include="MovieSchedule.aspx" />
+    <Content Include="movImage\bvs.jpg" />
+    <Content Include="movImage\deadpool.jpg" />
+    <Content Include="movImage\kungfu.jpg" />
+    <Content Include="movImage\suicide.jpg" />
+    <Content Include="DesignTheatreSeatMap.aspx" />
+    <Content Include="RoomMoviePage.aspx" />
+    <Content Include="RoomPage.aspx" />
+    <Content Include="RoomTypePage.aspx" />
     <Content Include="Styles\CustStyles.css" />
     <Content Include="Styles\StaffStyles.css" />
     <Content Include="Styles\Styles.css" />
+    <Content Include="TheaterPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +137,22 @@
     </Compile>
     <Compile Include="BookingDetail.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business Logic\BookingLogic.cs" />
+    <Compile Include="Business Logic\CustomerLogic.cs" />
+    <Compile Include="Business Logic\MovieLogic.cs" />
+    <Compile Include="Business Logic\RoomLogic.cs" />
+    <Compile Include="Business Logic\RoomMovieLogic.cs" />
+    <Compile Include="Business Logic\RoomTypeLogic.cs" />
+    <Compile Include="Business Logic\SeatLogic.cs" />
+    <Compile Include="Business Logic\TheaterLogic.cs" />
+    <Compile Include="Business Logic\UserLogic.cs" />
+    <Compile Include="CRegister.aspx.cs">
+      <DependentUpon>CRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CRegister.aspx.designer.cs">
+      <DependentUpon>CRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cust.master.cs">
       <DependentUpon>Cust.master</DependentUpon>
@@ -106,19 +171,12 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="genChkBoxTest.aspx.cs">
-      <DependentUpon>genChkBoxTest.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="genChkBoxTest.aspx.designer.cs">
-      <DependentUpon>genChkBoxTest.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="genChkBoxTest_wMstrPage.aspx.cs">
-      <DependentUpon>genChkBoxTest_wMstrPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="genChkBoxTest_wMstrPage.aspx.designer.cs">
-      <DependentUpon>genChkBoxTest_wMstrPage.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
@@ -127,16 +185,36 @@
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
-    <Compile Include="Movie.aspx.cs">
-      <DependentUpon>Movie.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Movie.aspx.designer.cs">
-      <DependentUpon>Movie.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Movie.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MovieDetail.aspx.cs">
+      <DependentUpon>MovieDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MovieDetail.aspx.designer.cs">
+      <DependentUpon>MovieDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MovieList.aspx.cs">
+      <DependentUpon>MovieList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MovieList.aspx.designer.cs">
+      <DependentUpon>MovieList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MoviePage.aspx.cs">
+      <DependentUpon>MoviePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MoviePage.aspx.designer.cs">
+      <DependentUpon>MoviePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MovieSchedule.aspx.cs">
+      <DependentUpon>MovieSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MovieSchedule.aspx.designer.cs">
+      <DependentUpon>MovieSchedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="MovieTheaterEDM.Context.cs">
       <AutoGen>True</AutoGen>
@@ -153,15 +231,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MovieTheaterEDM.edmx</DependentUpon>
     </Compile>
-    <Compile Include="PanelTestPage.aspx.cs">
-      <DependentUpon>PanelTestPage.aspx</DependentUpon>
+    <Compile Include="DesignTheatreSeatMap.aspx.cs">
+      <DependentUpon>DesignTheatreSeatMap.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PanelTestPage.aspx.designer.cs">
-      <DependentUpon>PanelTestPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PaymentType.cs">
-      <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
+    <Compile Include="DesignTheatreSeatMap.aspx.designer.cs">
+      <DependentUpon>DesignTheatreSeatMap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs">
@@ -170,21 +245,35 @@
     <Compile Include="RoomMovie.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="RoomMoviePage.aspx.cs">
+      <DependentUpon>RoomMoviePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoomMoviePage.aspx.designer.cs">
+      <DependentUpon>RoomMoviePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoomPage.aspx.cs">
+      <DependentUpon>RoomPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoomPage.aspx.designer.cs">
+      <DependentUpon>RoomPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RoomType.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoomTypePage.aspx.cs">
+      <DependentUpon>RoomTypePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoomTypePage.aspx.designer.cs">
+      <DependentUpon>RoomTypePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Seat.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="SeatMovie.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SeatTestV01.aspx.cs">
-      <DependentUpon>SeatTestV01.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SeatTestV01.aspx.designer.cs">
-      <DependentUpon>SeatTestV01.aspx</DependentUpon>
     </Compile>
     <Compile Include="Staff.master.cs">
       <DependentUpon>Staff.master</DependentUpon>
@@ -193,18 +282,18 @@
     <Compile Include="Staff.master.designer.cs">
       <DependentUpon>Staff.master</DependentUpon>
     </Compile>
-    <Compile Include="StaffTestPage.aspx.cs">
-      <DependentUpon>StaffTestPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="StaffTestPage.aspx.designer.cs">
-      <DependentUpon>StaffTestPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Theater.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TheaterPage.aspx.cs">
+      <DependentUpon>TheaterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TheaterPage.aspx.designer.cs">
+      <DependentUpon>TheaterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
@@ -214,6 +303,7 @@
     <Content Include="Main.Master" />
     <Content Include="Cust.master" />
     <Content Include="Staff.master" />
+    <Content Include="packages.config" />
     <EntityDeploy Include="MovieTheaterEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MovieTheaterEDM.Designer.cs</LastGenOutput>
@@ -231,7 +321,6 @@
       <DependentUpon>MovieTheaterEDM.edmx</DependentUpon>
       <LastGenOutput>MovieTheaterEDM.cs</LastGenOutput>
     </Content>
-    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -242,6 +331,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

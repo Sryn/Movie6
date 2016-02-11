@@ -5,8 +5,14 @@
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" runat="server">
-    <div id="header" class="container" style="height:100px; background-color:blue;"></div>
-    <div id="menuBar" class="container" style="height:30px; background-color:red;"></div>
+    <div id="header" class="container" style="height:134px; background-image:url('http://www.freewebheaders.com/wordpress/wp-content/gallery/artistic-abstract/magnificent-colorful-feathers-abstract-header.jpg');"></div>
+    <div id="menuBar" class="container" style="height:36px; border-top:1px solid black; border-bottom:1px solid black">
+        <div style="border-style: double; float:left; background-color: #FFCC00; display: block; height: 24px; width: 78px;" class="menuBarStyle" >Theater</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="border-style: double; float:left; height: 23px; background-color: #66FF33; display: block; width: 71px;" class="menuBarStyle">Movie</div>
+        <div style="border-style: double; float:left; height: 23px; background-color: #00FFFF; display: block;" class="menuBarStyle">Movie Show</div>
+        <div style="border-style: double; float:left; height: 23px; background-color: #FF3300; display: block; /*width: 74px;*/" class="menuBarStyle">Room Type</div>
+        <div style="clear:both;"></div>
+    </div>
     <div id="content" class="container" style="background-color:#F6F6F6; padding-bottom:20px;">
         <asp:ContentPlaceHolder ID="bodyStaff" runat="server">
         </asp:ContentPlaceHolder>

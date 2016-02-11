@@ -1,1 +1,12 @@
-﻿
+﻿.menuBarStyle{
+    padding-top:15px;
+    padding-left:15px;
+    padding-right:15px;
+    color:white;
+    font-size:18px;
+}
+.linkBarStyle{
+    color:white;
+    font-size:18px;
+    text-decoration:none;
+}

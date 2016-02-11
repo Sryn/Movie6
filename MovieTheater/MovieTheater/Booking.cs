@@ -22,16 +22,9 @@ namespace MovieTheater
         public int Booking_ID { get; set; }
         public int Customer_ID { get; set; }
         public int RoomMovie_ID { get; set; }
-        public int PaymentType_ID { get; set; }
         public double Amount { get; set; }
-        public string Card_Number { get; set; }
-        public string Card_Name { get; set; }
-        public Nullable<int> Card_Expiring_Month { get; set; }
-        public Nullable<int> Card_Expiring_Year { get; set; }
-        public string Card_Secret_Code { get; set; }
     
         public virtual Customer Customer { get; set; }
-        public virtual PaymentType PaymentType { get; set; }
         public virtual RoomMovie RoomMovie { get; set; }
         public virtual ICollection<BookingDetail> BookingDetail { get; set; }
     }

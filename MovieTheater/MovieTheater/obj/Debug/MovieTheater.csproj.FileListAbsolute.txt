@@ -7,30 +7,88 @@ c:\users\e0001217\documents\visual studio 2013\Projects\MovieTheater\MovieTheate
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\MovieTheater.dll.config
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\MovieTheater.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\MovieTheater.pdb
-C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\obj\Debug\MovieTheater.csprojResolveAssemblyReference.cache
-C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\obj\Debug\MovieTheater.dll
-C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\obj\Debug\MovieTheater.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\Antlr3.Runtime.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\EntityFramework.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\Newtonsoft.Json.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.Helpers.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.Optimization.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.Razor.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.WebPages.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.WebPages.Razor.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\WebGrease.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\Antlr3.Runtime.pdb
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\EntityFramework.xml
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.xml
-E:\MovieTheater\MovieTheater\bin\MovieTheater.dll.config
-E:\MovieTheater\MovieTheater\bin\MovieTheater.dll
-E:\MovieTheater\MovieTheater\bin\MovieTheater.pdb
-E:\MovieTheater\MovieTheater\bin\EntityFramework.dll
-E:\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.dll
-E:\MovieTheater\MovieTheater\bin\EntityFramework.xml
-E:\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.xml
-E:\MovieTheater\MovieTheater\obj\Debug\MovieTheater.csprojResolveAssemblyReference.cache
-E:\MovieTheater\MovieTheater\obj\Debug\MovieTheater.dll
-E:\MovieTheater\MovieTheater\obj\Debug\MovieTheater.pdb
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\bin\MovieTheater.dll.config
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\bin\MovieTheater.dll
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\bin\MovieTheater.pdb
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.dll
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.dll
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.xml
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.xml
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\obj\Debug\MovieTheater.dll
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\obj\Debug\MovieTheater.pdb
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\obj\Debug\MovieTheater.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\Newtonsoft.Json.xml
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.Helpers.xml
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.Optimization.xml
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.Razor.xml
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.WebPages.xml
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\bin\System.Web.WebPages.Razor.xml
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\obj\Debug\MovieTheater.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\obj\Debug\MovieTheater.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\MovieTheater\MovieTheater\obj\Debug\MovieTheater.csprojResolveAssemblyReference.cache
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\MovieTheater.dll.config
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\MovieTheater.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\MovieTheater.pdb
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\Antlr3.Runtime.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\EntityFramework.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\Newtonsoft.Json.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.Helpers.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.Mvc.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.Optimization.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.Razor.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.WebPages.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.WebPages.Razor.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\WebGrease.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\Antlr3.Runtime.pdb
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\EntityFramework.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\Newtonsoft.Json.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.Helpers.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.Mvc.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.Optimization.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.Razor.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.WebPages.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\bin\System.Web.WebPages.Razor.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\obj\Debug\MovieTheater.csprojResolveAssemblyReference.cache
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\obj\Debug\MovieTheater.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\Akwila\MovieTheater\MovieTheater\MovieTheater\obj\Debug\MovieTheater.pdb
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\MovieTheater.dll.config
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\MovieTheater.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\MovieTheater.pdb
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\Antlr3.Runtime.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\Newtonsoft.Json.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.Helpers.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.Mvc.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.Optimization.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.Razor.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.WebPages.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.WebPages.Razor.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\WebGrease.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\Antlr3.Runtime.pdb
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\Newtonsoft.Json.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.Helpers.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.Mvc.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.Optimization.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.Razor.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.WebPages.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\bin\System.Web.WebPages.Razor.xml
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\obj\Debug\MovieTheater.csprojResolveAssemblyReference.cache
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\obj\Debug\MovieTheater.dll
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\GitHub\Movie6\MovieTheater\MovieTheater\obj\Debug\MovieTheater.pdb

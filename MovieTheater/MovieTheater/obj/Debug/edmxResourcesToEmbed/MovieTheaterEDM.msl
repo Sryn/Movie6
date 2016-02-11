@@ -7,13 +7,7 @@
           <ScalarProperty Name="Booking_ID" ColumnName="Booking_ID" />
           <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
           <ScalarProperty Name="RoomMovie_ID" ColumnName="RoomMovie_ID" />
-          <ScalarProperty Name="PaymentType_ID" ColumnName="PaymentType_ID" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
-          <ScalarProperty Name="Card_Name" ColumnName="Card_Name" />
-          <ScalarProperty Name="Card_Expiring_Month" ColumnName="Card_Expiring_Month" />
-          <ScalarProperty Name="Card_Expiring_Year" ColumnName="Card_Expiring_Year" />
-          <ScalarProperty Name="Card_Secret_Code" ColumnName="Card_Secret_Code" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -57,16 +51,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PaymentType">
-      <EntityTypeMapping TypeName="MovieTheaterModel.PaymentType">
-        <MappingFragment StoreEntitySet="PaymentType">
-          <ScalarProperty Name="PaymentType_ID" ColumnName="PaymentType_ID" />
-          <ScalarProperty Name="PaymentType_Name" ColumnName="PaymentType_Name" />
-          <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
-          <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Room">
       <EntityTypeMapping TypeName="MovieTheaterModel.Room">
         <MappingFragment StoreEntitySet="Room">
@@ -74,6 +58,7 @@
           <ScalarProperty Name="Room_Name" ColumnName="Room_Name" />
           <ScalarProperty Name="Theater_ID" ColumnName="Theater_ID" />
           <ScalarProperty Name="RoomType_ID" ColumnName="RoomType_ID" />
+          <ScalarProperty Name="Seat_Pattern" ColumnName="Seat_Pattern" />
           <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
           <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
         </MappingFragment>

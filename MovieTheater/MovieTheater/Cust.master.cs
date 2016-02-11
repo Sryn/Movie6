@@ -11,7 +11,38 @@ namespace MovieTheater
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["uid"] == null)
+            {
+                pnlLogin.Visible = false;
+                pnlNotLogin.Visible = true;
+            }
+            else
+            {
+                lblCustName.Text = Session["uname"].ToString();
+                pnlLogin.Visible = true;
+                pnlNotLogin.Visible = false;
+            }
+        }
 
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("MovieSchedule.aspx");
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CRegister.aspx");
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void btnMovie_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MovieList.aspx");
         }
     }
 }

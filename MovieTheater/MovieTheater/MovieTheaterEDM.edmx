@@ -12,13 +12,7 @@
           <Property Name="Booking_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Customer_ID" Type="int" Nullable="false" />
           <Property Name="RoomMovie_ID" Type="int" Nullable="false" />
-          <Property Name="PaymentType_ID" Type="int" Nullable="false" />
           <Property Name="Amount" Type="float" Nullable="false" />
-          <Property Name="Card_Number" Type="varchar" MaxLength="20" />
-          <Property Name="Card_Name" Type="varchar" MaxLength="50" />
-          <Property Name="Card_Expiring_Month" Type="int" />
-          <Property Name="Card_Expiring_Year" Type="int" />
-          <Property Name="Card_Secret_Code" Type="varchar" MaxLength="5" />
         </EntityType>
         <EntityType Name="BookingDetail">
           <Key>
@@ -57,15 +51,6 @@
           <Property Name="Active_Indicator" Type="bit" Nullable="false" />
           <Property Name="Update_Datetime" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="PaymentType">
-          <Key>
-            <PropertyRef Name="PaymentType_ID" />
-          </Key>
-          <Property Name="PaymentType_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PaymentType_Name" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="Active_Indicator" Type="bit" Nullable="false" />
-          <Property Name="Update_Datetime" Type="datetime" Nullable="false" />
-        </EntityType>
         <EntityType Name="Room">
           <Key>
             <PropertyRef Name="Room_ID" />
@@ -74,6 +59,7 @@
           <Property Name="Room_Name" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Theater_ID" Type="int" Nullable="false" />
           <Property Name="RoomType_ID" Type="int" Nullable="false" />
+          <Property Name="Seat_Pattern" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Active_Indicator" Type="bit" Nullable="false" />
           <Property Name="Update_Datetime" Type="datetime" Nullable="false" />
         </EntityType>
@@ -162,18 +148,6 @@
             </Principal>
             <Dependent Role="Booking">
               <PropertyRef Name="Customer_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Booking_PaymentType">
-          <End Role="PaymentType" Type="Self.PaymentType" Multiplicity="1" />
-          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PaymentType">
-              <PropertyRef Name="PaymentType_ID" />
-            </Principal>
-            <Dependent Role="Booking">
-              <PropertyRef Name="PaymentType_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -278,7 +252,6 @@
           <EntitySet Name="BookingDetail" EntityType="Self.BookingDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movie" EntityType="Self.Movie" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PaymentType" EntityType="Self.PaymentType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RoomMovie" EntityType="Self.RoomMovie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RoomType" EntityType="Self.RoomType" Schema="dbo" store:Type="Tables" />
@@ -289,10 +262,6 @@
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Booking_Customer" Association="Self.FK_Booking_Customer">
             <End Role="Customer" EntitySet="Customer" />
-            <End Role="Booking" EntitySet="Booking" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Booking_PaymentType" Association="Self.FK_Booking_PaymentType">
-            <End Role="PaymentType" EntitySet="PaymentType" />
             <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
           <AssociationSet Name="FK_Booking_RoomMovie" Association="Self.FK_Booking_RoomMovie">
@@ -340,15 +309,8 @@
           <Property Name="Booking_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Customer_ID" Type="Int32" Nullable="false" />
           <Property Name="RoomMovie_ID" Type="Int32" Nullable="false" />
-          <Property Name="PaymentType_ID" Type="Int32" Nullable="false" />
           <Property Name="Amount" Type="Double" Nullable="false" />
-          <Property Name="Card_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Card_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Card_Expiring_Month" Type="Int32" />
-          <Property Name="Card_Expiring_Year" Type="Int32" />
-          <Property Name="Card_Secret_Code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Booking_Customer" FromRole="Booking" ToRole="Customer" />
-          <NavigationProperty Name="PaymentType" Relationship="Self.FK_Booking_PaymentType" FromRole="Booking" ToRole="PaymentType" />
           <NavigationProperty Name="RoomMovie" Relationship="Self.FK_Booking_RoomMovie" FromRole="Booking" ToRole="RoomMovie" />
           <NavigationProperty Name="BookingDetail" Relationship="Self.FK_BookingDetail_Booking" FromRole="Booking" ToRole="BookingDetail" />
         </EntityType>
@@ -392,16 +354,6 @@
           <Property Name="Update_Datetime" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="RoomMovie" Relationship="Self.FK_RoomMovie_Movie" FromRole="Movie" ToRole="RoomMovie" />
         </EntityType>
-        <EntityType Name="PaymentType">
-          <Key>
-            <PropertyRef Name="PaymentType_ID" />
-          </Key>
-          <Property Name="PaymentType_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PaymentType_Name" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Active_Indicator" Type="Boolean" Nullable="false" />
-          <Property Name="Update_Datetime" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Booking" Relationship="Self.FK_Booking_PaymentType" FromRole="PaymentType" ToRole="Booking" />
-        </EntityType>
         <EntityType Name="Room">
           <Key>
             <PropertyRef Name="Room_ID" />
@@ -410,6 +362,7 @@
           <Property Name="Room_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Theater_ID" Type="Int32" Nullable="false" />
           <Property Name="RoomType_ID" Type="Int32" Nullable="false" />
+          <Property Name="Seat_Pattern" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active_Indicator" Type="Boolean" Nullable="false" />
           <Property Name="Update_Datetime" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="RoomType" Relationship="Self.FK_Room_RoomType" FromRole="Room" ToRole="RoomType" />
@@ -510,18 +463,6 @@
             </Principal>
             <Dependent Role="Booking">
               <PropertyRef Name="Customer_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Booking_PaymentType">
-          <End Role="PaymentType" Type="Self.PaymentType" Multiplicity="1" />
-          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PaymentType">
-              <PropertyRef Name="PaymentType_ID" />
-            </Principal>
-            <Dependent Role="Booking">
-              <PropertyRef Name="PaymentType_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -626,7 +567,6 @@
           <EntitySet Name="BookingDetail" EntityType="Self.BookingDetail" />
           <EntitySet Name="Customer" EntityType="Self.Customer" />
           <EntitySet Name="Movie" EntityType="Self.Movie" />
-          <EntitySet Name="PaymentType" EntityType="Self.PaymentType" />
           <EntitySet Name="Room" EntityType="Self.Room" />
           <EntitySet Name="RoomMovie" EntityType="Self.RoomMovie" />
           <EntitySet Name="RoomType" EntityType="Self.RoomType" />
@@ -637,10 +577,6 @@
           <EntitySet Name="User" EntityType="Self.User" />
           <AssociationSet Name="FK_Booking_Customer" Association="Self.FK_Booking_Customer">
             <End Role="Customer" EntitySet="Customer" />
-            <End Role="Booking" EntitySet="Booking" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Booking_PaymentType" Association="Self.FK_Booking_PaymentType">
-            <End Role="PaymentType" EntitySet="PaymentType" />
             <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
           <AssociationSet Name="FK_Booking_RoomMovie" Association="Self.FK_Booking_RoomMovie">
@@ -688,13 +624,7 @@
                 <ScalarProperty Name="Booking_ID" ColumnName="Booking_ID" />
                 <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
                 <ScalarProperty Name="RoomMovie_ID" ColumnName="RoomMovie_ID" />
-                <ScalarProperty Name="PaymentType_ID" ColumnName="PaymentType_ID" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
-                <ScalarProperty Name="Card_Name" ColumnName="Card_Name" />
-                <ScalarProperty Name="Card_Expiring_Month" ColumnName="Card_Expiring_Month" />
-                <ScalarProperty Name="Card_Expiring_Year" ColumnName="Card_Expiring_Year" />
-                <ScalarProperty Name="Card_Secret_Code" ColumnName="Card_Secret_Code" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -738,16 +668,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PaymentType">
-            <EntityTypeMapping TypeName="MovieTheaterModel.PaymentType">
-              <MappingFragment StoreEntitySet="PaymentType">
-                <ScalarProperty Name="PaymentType_ID" ColumnName="PaymentType_ID" />
-                <ScalarProperty Name="PaymentType_Name" ColumnName="PaymentType_Name" />
-                <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
-                <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Room">
             <EntityTypeMapping TypeName="MovieTheaterModel.Room">
               <MappingFragment StoreEntitySet="Room">
@@ -755,6 +675,7 @@
                 <ScalarProperty Name="Room_Name" ColumnName="Room_Name" />
                 <ScalarProperty Name="Theater_ID" ColumnName="Theater_ID" />
                 <ScalarProperty Name="RoomType_ID" ColumnName="RoomType_ID" />
+                <ScalarProperty Name="Seat_Pattern" ColumnName="Seat_Pattern" />
                 <ScalarProperty Name="Active_Indicator" ColumnName="Active_Indicator" />
                 <ScalarProperty Name="Update_Datetime" ColumnName="Update_Datetime" />
               </MappingFragment>

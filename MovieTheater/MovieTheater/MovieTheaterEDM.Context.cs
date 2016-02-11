@@ -29,7 +29,6 @@ namespace MovieTheater
         public virtual DbSet<BookingDetail> BookingDetail { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Movie> Movie { get; set; }
-        public virtual DbSet<PaymentType> PaymentType { get; set; }
         public virtual DbSet<Room> Room { get; set; }
         public virtual DbSet<RoomMovie> RoomMovie { get; set; }
         public virtual DbSet<RoomType> RoomType { get; set; }

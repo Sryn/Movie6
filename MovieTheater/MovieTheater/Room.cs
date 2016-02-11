@@ -24,6 +24,7 @@ namespace MovieTheater
         public string Room_Name { get; set; }
         public int Theater_ID { get; set; }
         public int RoomType_ID { get; set; }
+        public string Seat_Pattern { get; set; }
         public bool Active_Indicator { get; set; }
         public System.DateTime Update_Datetime { get; set; }
     

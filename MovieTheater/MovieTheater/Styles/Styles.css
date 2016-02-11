@@ -23,3 +23,27 @@
     font-weight:bold;
     padding-bottom:15px;
 }
+
+.tbxStyle{
+    font-size:14px;
+}
+
+.errStyle{
+    color:red;
+    font-size:12px;
+}
+
+.btnStyle{
+    font-size:14px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.gridItemStyle{
+    padding-left:7px;
+    padding-right:7px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
