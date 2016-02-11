@@ -66,10 +66,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.aspx" />
+    <Content Include="genChkBoxTest.aspx" />
+    <Content Include="genChkBoxTest_wMstrPage.aspx" />
+    <Content Include="Images\ChairIconV04.png" />
+    <Content Include="Images\ChairIconV06.png" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\edit1.png" />
     <Content Include="Images\movie.ico" />
     <Content Include="Movie.aspx" />
+    <Content Include="PanelTestPage.aspx" />
+    <Content Include="SeatTestV01.aspx" />
     <Content Include="StaffTestPage.aspx" />
     <Content Include="Styles\CustStyles.css" />
     <Content Include="Styles\StaffStyles.css" />
@@ -99,6 +105,20 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="genChkBoxTest.aspx.cs">
+      <DependentUpon>genChkBoxTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="genChkBoxTest.aspx.designer.cs">
+      <DependentUpon>genChkBoxTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="genChkBoxTest_wMstrPage.aspx.cs">
+      <DependentUpon>genChkBoxTest_wMstrPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="genChkBoxTest_wMstrPage.aspx.designer.cs">
+      <DependentUpon>genChkBoxTest_wMstrPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
@@ -133,6 +153,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MovieTheaterEDM.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PanelTestPage.aspx.cs">
+      <DependentUpon>PanelTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanelTestPage.aspx.designer.cs">
+      <DependentUpon>PanelTestPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaymentType.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
     </Compile>
@@ -151,6 +178,13 @@
     </Compile>
     <Compile Include="SeatMovie.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SeatTestV01.aspx.cs">
+      <DependentUpon>SeatTestV01.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeatTestV01.aspx.designer.cs">
+      <DependentUpon>SeatTestV01.aspx</DependentUpon>
     </Compile>
     <Compile Include="Staff.master.cs">
       <DependentUpon>Staff.master</DependentUpon>

@@ -31,6 +31,6 @@ C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTh
 C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.dll
 C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.xml
 C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\bin\EntityFramework.SqlServer.xml
-C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\obj\Debug\MovieTheater.csprojResolveAssemblyReference.cache
 C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\obj\Debug\MovieTheater.dll
 C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\obj\Debug\MovieTheater.pdb
+C:\Users\Sryn\Documents\Dropbox\SA41 Work\Term 3\ASP.Net WebForms\Movie6\MovieTheater\MovieTheater\obj\Debug\MovieTheater.csprojResolveAssemblyReference.cache
