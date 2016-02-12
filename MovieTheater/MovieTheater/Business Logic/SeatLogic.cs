@@ -52,5 +52,105 @@ namespace MovieTheater.Business_Logic
             st.Update_Datetime = DateTime.Today;
             context.SaveChanges();
         }
+
+        public static bool deactivateRoomSeats(int rid, out String errorMsg)
+        {
+            bool boolResult = false;
+            errorMsg = " No Error, Just Success!!!";
+            int sid;
+
+            try
+            {
+                List<Seat> roomSeats = getSeatListByRoom(rid);
+
+                foreach (Seat aSeat in roomSeats)
+                {
+                    sid = aSeat.Seat_ID;
+                    errorMsg = " Trying to 'delete' roomID="+rid+" seatID="+sid+" ";
+                    deleteSeat(sid);
+                }
+
+                errorMsg = " Successfully deactivated all seats in theatreRoom with roomID=" + rid.ToString();
+                boolResult = true;
+            }
+            catch (Exception ex)
+            {
+                // ERROR
+                boolResult = false;
+                errorMsg += ex.Message;
+                System.Diagnostics.Debug.WriteLine("\n>> Error Exception Message = \"" + errorMsg + "\"");
+            }
+
+            return boolResult;
+        }
+
+        public static bool createRoomSeats(int rid, int rowCount, int seatColCount, out String errorMsg)
+        {
+            System.Diagnostics.Debug.WriteLine(">> createRoomSeats(rid=" + rid + ", rowCount=" + rowCount + ", seatColCount=" + seatColCount + ")");
+
+            bool boolResult = false;
+            errorMsg = " No Error, Just Success!!!";
+
+            var context = new MovieTheaterEntities();
+
+            // check there must be no other seats with rid in dB
+            List<Seat> roomSeatList = getSeatListByRoom(rid);
+            if (roomSeatList.Count == 0)
+            {
+                String seatName = "";
+                int i, j;
+
+                for (i = 1; i <= rowCount; i++) // rows
+                {
+                    for (j = 1; j <= seatColCount; j++) // columns
+                    {
+                        seatName = getSeatName(i, j);
+
+                        try
+                        {
+                            errorMsg = "createRoomSeats insertSeat(rid=" + rid + ", seatName=" + seatName + ", row i=" + i + ", column j=" + j + ") ";
+                            System.Diagnostics.Debug.Write(">> " + errorMsg);
+                            insertSeat(rid, seatName, i, j);
+
+                            boolResult = true;
+                            System.Diagnostics.Debug.WriteLine(" Success");
+                        }
+                        catch (Exception ex)
+                        {
+                            //Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('" + ex.Message + "');", true);
+
+                            // ERROR
+                            boolResult = false;
+                            errorMsg += ex.Message;
+                            System.Diagnostics.Debug.WriteLine("\n>> Error Exception Message = \""+errorMsg+"\"");
+                        }
+
+                        if (!boolResult)
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                errorMsg = " Successfully created " + (rowCount * seatColCount).ToString() + " seats for theatreRoom with roomID=" + rid.ToString();
+            }
+            else
+            {
+                boolResult = false;
+                errorMsg = " ErrorNo: 01 - \"theatreRoom with roomID=" + rid + " already has " + roomSeatList.Count + " seats inside.\"";
+            }
+
+            return boolResult;
+        }
+
+        private static String getSeatName(int seatRow, int seatColumn)
+        {
+            System.Diagnostics.Debug.WriteLine(">> getSeatName( seatRow=" + seatRow + ", seatColumn=" + seatColumn + ")");
+
+            //throw new NotImplementedException();
+            const String Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            return (Alphabet[seatRow-1] + seatColumn.ToString());
+        }
     }
 }

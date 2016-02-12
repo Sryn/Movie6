@@ -48,6 +48,7 @@
                     <asp:TextBox ID="txtRoomName" runat="server" CssClass="tbxStyle" Width="200px"></asp:TextBox>
                     <asp:Label ID="lblname" runat="server" CssClass="errStyle"></asp:Label>
                 </td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>
@@ -58,20 +59,23 @@
                     <asp:DropDownList ID="ddlRoomtypename" runat="server" DataTextField="RoomType.RoomType_Name" DataValueField="RoomType.RoomType_ID" AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
-                <td><asp:Label ID="lblSeatPattern" runat="server" Text="Seat Pattern"></asp:Label></td>
+                <td><asp:Label ID="lblTxtSeatPattern" runat="server" Text="Theater Room Seat Pattern"></asp:Label></td>
                 <td>:&nbsp;</td>
                 <td>
-                    <asp:TextBox ID="tbxSeatPattern" runat="server" Width="200" Enabled="False"></asp:TextBox>
+                    <asp:Label ID="lblSeatPattern" runat="server" Width="200" Text=""></asp:Label>
                     <asp:Label ID="lbltsPattern" runat="server" CssClass="errStyle"></asp:Label>
                 </td>
+                <td><asp:Button ID="inAddBtnToDTSeatMap" runat="server" Text="Design Theatre Room Seat Layout" OnClick="inAddBtnToDTSeatMap_Click" /></td>
             </tr>
             <tr>
                 <td colspan="3" style="padding-top: 15px;">
                     <asp:Button ID="btnSubmit" runat="server" CssClass="btnStyle" OnClick="btnSubmit_Click" Text="Submit" />
                     <asp:Button ID="btnClose" runat="server" CssClass="btnStyle" Text="Close" OnClick="btnClose_Click" />
                 </td>
+                <td>&nbsp;</td>
             </tr>
         </table>
     </asp:Panel>
@@ -90,6 +94,7 @@
                     <asp:TextBox ID="txtrname" runat="server" CssClass="tbxStyle" Width="200px"></asp:TextBox>
                     <asp:Label ID="lbleditname" runat="server" CssClass="errStyle"></asp:Label>
                 </td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>
@@ -100,20 +105,24 @@
                     <asp:DropDownList ID="ddlroomtype" runat="server" DataTextField="RoomType.RoomType_Name" DataValueField="RoomType.RoomType_ID" AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
                 <td><asp:Label ID="lblESeatPattern" runat="server" Text="Seat Pattern"></asp:Label></td>
                 <td>:&nbsp;</td>
                 <td>
-                    <asp:TextBox ID="tbxESeatPattern" runat="server" Width="200"></asp:TextBox>
+                    <asp:Label ID="lbl2ESeatPattern" runat="server" Text="Label" Width="200"></asp:Label>
+                    <asp:TextBox ID="tbxESeatPattern" runat="server" Width="200" Visible="False"></asp:TextBox>
                     <asp:Label ID="lbltSeatPattern" runat="server" CssClass="errStyle"></asp:Label>
                 </td>
+                <td>&nbsp;<asp:Button ID="inEditBtnToDTSeatMap" runat="server" Text="Edit Theatre Room Seat Layout" OnClick="inEditBtnToDTSeatMap_Click" /></td>
             </tr>
             <tr>
                 <td colspan="3" style="padding-top: 15px;">
                     <asp:Button ID="btnUpdate" runat="server" CssClass="btnStyle" OnClick="btnUpdate_Click" Text="Update" />
                     <asp:Button ID="btnCancel" runat="server" CssClass="btnStyle" Text="Cancel" OnClick="btnCancel_Click" />
                 </td>
+                <td>&nbsp;</td>
             </tr>
         </table>
     </asp:Panel>

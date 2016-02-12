@@ -94,6 +94,15 @@ namespace MovieTheater {
         protected global::System.Web.UI.WebControls.DropDownList ddlRoomtypename;
         
         /// <summary>
+        /// lblTxtSeatPattern control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTxtSeatPattern;
+        
+        /// <summary>
         /// lblSeatPattern control.
         /// </summary>
         /// <remarks>
@@ -103,15 +112,6 @@ namespace MovieTheater {
         protected global::System.Web.UI.WebControls.Label lblSeatPattern;
         
         /// <summary>
-        /// tbxSeatPattern control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxSeatPattern;
-        
-        /// <summary>
         /// lbltsPattern control.
         /// </summary>
         /// <remarks>
@@ -119,6 +119,15 @@ namespace MovieTheater {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbltsPattern;
+        
+        /// <summary>
+        /// inAddBtnToDTSeatMap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button inAddBtnToDTSeatMap;
         
         /// <summary>
         /// btnSubmit control.
@@ -211,6 +220,15 @@ namespace MovieTheater {
         protected global::System.Web.UI.WebControls.Label lblESeatPattern;
         
         /// <summary>
+        /// lbl2ESeatPattern control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl2ESeatPattern;
+        
+        /// <summary>
         /// tbxESeatPattern control.
         /// </summary>
         /// <remarks>
@@ -227,6 +245,15 @@ namespace MovieTheater {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbltSeatPattern;
+        
+        /// <summary>
+        /// inEditBtnToDTSeatMap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button inEditBtnToDTSeatMap;
         
         /// <summary>
         /// btnUpdate control.

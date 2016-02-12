@@ -113,6 +113,7 @@
     <Content Include="Images\movie.ico" />
     <Content Include="Images\next.png" />
     <Content Include="Login.aspx" />
+    <Content Include="MakeSeats.aspx" />
     <Content Include="MovieDetail.aspx" />
     <Content Include="MovieList.aspx" />
     <Content Include="MoviePage.aspx" />
@@ -184,6 +185,13 @@
     </Compile>
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MakeSeats.aspx.cs">
+      <DependentUpon>MakeSeats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MakeSeats.aspx.designer.cs">
+      <DependentUpon>MakeSeats.aspx</DependentUpon>
     </Compile>
     <Compile Include="Movie.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>

@@ -42,6 +42,12 @@ namespace MovieTheater
             set { ViewState["Aisles"] = value; }
         }
 
+        protected String seatMapPattern
+        {
+            get { return (String)ViewState["seatMapPattern"]; }
+            set { ViewState["seatMapPattern"] = value; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine(">> Page_Load");
@@ -57,11 +63,19 @@ namespace MovieTheater
                 aisles = new List<int>();
                 rowCount = 0;
                 seatColCount = 0;
+
+                getTheatreName();
+                getTheatreRoomName();
+                getTheatreRoomType();
+                getPrevPageTheatreRoomSeatMapPattern();
             }
-            else
-            {
-                recreateChkBxs();
-            }
+            //else
+            //{
+                //recreateChkBxs();
+            //}
+
+            recreateChkBxs();
+            //showParseResults();
 
             //rowCount = 26;
             //seatColCount = 16;
@@ -83,11 +97,158 @@ namespace MovieTheater
             updateLblTotalSeats();
 
             checkCheckBoxes();
-
+            //updatePostBackURLQS();
             //showAisleCheckBoxes();
 
             //showNewAisles(); // disabled after production
 
+        }
+
+        private void getPrevPageTheatreRoomSeatMapPattern()
+        {
+            System.Diagnostics.Debug.WriteLine(">> getPrevPageTheatreRoomSeatMapPattern()");
+            //throw new NotImplementedException();
+            //if (PreviousPage != null)
+            //{
+//                lblSeatMapPattern.Text = PreviousPage.theatreRoomSeatMapPattern;
+
+                if (Session["seatMapPattern"] != null)
+                    lblSeatMapPattern.Text = Session["seatMapPattern"] as String;
+
+                this.seatMapPattern = lblSeatMapPattern.Text;
+
+                if (lblSeatMapPattern.Text != String.Empty)
+                {
+                    // seatMap have been setup before
+                    // store store values in their respective variables
+                    parseSeatMapPattern(lblSeatMapPattern.Text);
+                }
+                else
+                {
+                    // seatMap hasn't been setup yet
+                    // so initialise rowCount, seatColCount and aisles
+                }
+            //}
+            //else
+            //{
+            //    lblSeatMapPattern.Text = "";
+            //    this.seatMapPattern = "";
+
+            //    // assume seatMap hasn't been setup yet
+            //    // so initialise rowCount, seatColCount and aisles
+
+            //}
+        }
+
+        private void parseSeatMapPattern(string privSeatMapPattern)
+        {
+            System.Diagnostics.Debug.WriteLine(">> parseSeatMapPattern(\"" + privSeatMapPattern + "\")");
+            //throw new NotImplementedException();
+
+            string[] stringCommaSplit = privSeatMapPattern.Split(',');
+            int arraySize = stringCommaSplit.Length;
+
+            int result = 0;
+
+            if (int.TryParse(stringCommaSplit[0].Trim(), out result))
+            { 
+                rowCount = result;
+            }
+
+            result = 0;
+
+            if (int.TryParse(stringCommaSplit[1].Trim(), out result))
+            {
+                seatColCount = result;
+                numOfChkBxs = result;
+            }
+
+            if(arraySize > 2) {
+                aisles.Clear();
+
+                for (int i = 2; i < arraySize; i++)
+                {
+                    result = 0;
+                    if(int.TryParse(stringCommaSplit[i].Trim(), out result)) {
+                        if (result != 0)
+                            aisles.Add(result);
+                    }
+                }
+            }
+
+            showParseResults();
+        }
+
+        private void showParseResults()
+        {
+            //throw new NotImplementedException();
+            updateThreeLabels();
+
+            lblRowCount.Text = rowCount.ToString();
+
+            lblSeatColCount.Text = seatColCount.ToString();
+        }
+
+        private void updateThreeLabels()
+        {
+            Label4.Text = rowCount.ToString();
+            Label5.Text = seatColCount.ToString();
+            Label6.Text = "";
+            foreach (int i in aisles)
+            {
+                Label6.Text += i.ToString() + " ";
+            }
+            seatMapPattern = makeSeatMapPattern();
+            //Session["seatMapPattern"] = seatMapPattern;
+            lblSeatMapPattern.Text = seatMapPattern;
+        }
+
+        private void getTheatreRoomType()
+        {
+            //throw new NotImplementedException();
+            //if (PreviousPage != null)
+            //{
+            //    lblTheatreRoomType.Text = PreviousPage.theatreRoomType;
+            //    lblTheatreRoomTypeText.Text = PreviousPage.theatreRoomTypeText;
+            //}
+
+            if (Session["theatreRoomType"] != null)
+                lblTheatreRoomType.Text = Session["theatreRoomType"] as String;
+            else
+                lblTheatreRoomType.Text = string.Empty;
+
+            if (Session["theatreRoomTypeText"] != null)
+                lblTheatreRoomTypeText.Text = Session["theatreRoomTypeText"] as String;
+            else
+                lblTheatreRoomTypeText.Text = string.Empty;
+        }
+
+        private void getTheatreRoomName()
+        {
+            //throw new NotImplementedException();
+            //if (PreviousPage != null)
+            //{
+            //    lblTheatreRoomName.Text = PreviousPage.theatreRoomName;
+            //}
+
+            if (Session["theatreRoomName"] != null)
+                lblTheatreRoomName.Text = Session["theatreRoomName"] as String;
+            else
+                lblTheatreRoomName.Text = string.Empty;
+        }
+
+        private void getTheatreName()
+        {
+            //throw new NotImplementedException();
+            //if (PreviousPage != null)
+            //{
+            //    lblTheatreName.Text = PreviousPage.theatreName;
+            //}
+
+            if (Session["name"] != null)
+                lblTheatreName.Text = Session["name"] as String;
+            else
+                lblTheatreName.Text = string.Empty;
         }
 
         private void recreateChkBxs()
@@ -540,10 +701,7 @@ namespace MovieTheater
                 lblRowCount.Text = rowCount.ToString();
             }
 
-            checkCheckBoxes();
-            showAisleCheckBoxes(seatColCount);
-            //showNewAisles(); // disabled after production
-            updateLblTotalSeats();
+            doAllPostUpdates();
         }
 
         protected void btnIncreaseRowCount_Click(object sender, EventArgs e)
@@ -558,10 +716,7 @@ namespace MovieTheater
                 lblRowCount.Text = rowCount.ToString();
             }
 
-            checkCheckBoxes();
-            showAisleCheckBoxes(seatColCount);
-            //showNewAisles(); // disabled after production
-            updateLblTotalSeats();
+            doAllPostUpdates();
         }
 
         protected void btnDecreaseSeatCount_Click(object sender, EventArgs e)
@@ -576,10 +731,7 @@ namespace MovieTheater
                 lblSeatColCount.Text = seatColCount.ToString();
             }
 
-            checkCheckBoxes();
-            showAisleCheckBoxes(seatColCount);
-            //showNewAisles(); // disabled after production
-            updateLblTotalSeats();
+            doAllPostUpdates();
         }
 
         protected void btnIncreaseSeatCount_Click(object sender, EventArgs e)
@@ -594,10 +746,7 @@ namespace MovieTheater
                 lblSeatColCount.Text = seatColCount.ToString();
             }
 
-            checkCheckBoxes();
-            showAisleCheckBoxes(seatColCount);
-            //showNewAisles(); // disabled after production
-            updateLblTotalSeats();
+            doAllPostUpdates();
         }
 
         protected void btnUpdateAisleCheckboxes_Click(object sender, EventArgs e)
@@ -647,6 +796,8 @@ namespace MovieTheater
             showAisleCheckBoxes(seatColCount);
             //showNewAisles();
 //            updateLblTotalSeats();
+            updateThreeLabels();
+            //updatePostBackURLQS();
         }
 
         private void checkCheckBoxes()
@@ -679,6 +830,78 @@ namespace MovieTheater
 
 //            showAisleCheckBoxes();
             //showNewAisles(); // disabled after production
+        }
+
+        private String makeSeatMapPattern()
+        {
+            String aString = string.Empty;
+
+            aString = rowCount.ToString();
+            aString += ", " + seatColCount.ToString();
+            foreach (int i in aisles)
+            {
+                aString += ", " + i.ToString();
+            }
+
+            return aString;
+        }
+
+        private void doAllPostUpdates()
+        {
+            checkCheckBoxes();
+            showAisleCheckBoxes(seatColCount);
+            //showNewAisles(); // disabled after production
+            updateLblTotalSeats();
+            updateThreeLabels();
+            //updatePostBackURLQS();
+        }
+
+        // not using this technique
+        //private void updatePostBackURLQS()
+        //{
+        //    Button qsBtn = Panel1.FindControl("btnRoomUpdate") as Button;
+
+        //    if(qsBtn != null) {
+        //        System.Diagnostics.Debug.WriteLine(">> updatePostBackURLQS() btnRoomUpdate found");
+
+        //        String queryString = "~/RoomPage.aspx";
+        //        queryString += "?roomName=" + lblTheatreRoomName.Text;
+        //        queryString += "&roomType=" + lblTheatreRoomType.Text;
+        //        //queryString += "&seatMapPattern=" + seatMapPattern;
+
+        //        qsBtn.PostBackUrl = queryString;
+        //    }
+        //    else
+        //    {
+        //        System.Diagnostics.Debug.WriteLine(">> updatePostBackURLQS() btnRoomUpdate not found");
+        //    }
+        //}
+
+        protected void btnUpdateCancel_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(">> btnUpdateCancel_Click()");
+
+            seatMapPattern = "";
+            //if (Session["seatMapPattern"] != null)
+            //    Session["seatMapPattern"] = "";
+
+            String queryString = "~/RoomPage.aspx";
+            queryString += "?roomName=" + lblTheatreRoomName.Text;
+            queryString += "&roomType=" + lblTheatreRoomType.Text;
+
+            Response.Redirect(queryString);
+        }
+
+        protected void btnRoomUpdate_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(">> btnRoomUpdate_Click()");
+
+            String queryString = "~/RoomPage.aspx";
+            queryString += "?roomName=" + lblTheatreRoomName.Text;
+            queryString += "&roomType=" + lblTheatreRoomType.Text;
+            queryString += "&seatMapPattern=" + seatMapPattern;
+
+            Response.Redirect(queryString);
         }
 
     }
