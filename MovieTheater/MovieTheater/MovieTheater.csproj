@@ -109,8 +109,10 @@
     <Content Include="CRegister.aspx" />
     <Content Include="CustomerRegister.aspx" />
     <Content Include="default.aspx" />
+    <Content Include="DesignTheatreSeatMap.aspx" />
     <Content Include="Images\back.png" />
     <Content Include="Images\calendar.png" />
+    <Content Include="Images\ChairIconV06.png" />
     <Content Include="Images\d2h_cinema_logo.png" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\edit1.png" />
@@ -118,6 +120,7 @@
     <Content Include="Images\movie.ico" />
     <Content Include="Images\next.png" />
     <Content Include="Login.aspx" />
+    <Content Include="MakeSeats.aspx" />
     <Content Include="MovieDetail.aspx" />
     <Content Include="MovieList.aspx" />
     <Content Include="MoviePage.aspx" />
@@ -191,6 +194,13 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DesignTheatreSeatMap.aspx.cs">
+      <DependentUpon>DesignTheatreSeatMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DesignTheatreSeatMap.aspx.designer.cs">
+      <DependentUpon>DesignTheatreSeatMap.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,6 +214,13 @@
     </Compile>
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MakeSeats.aspx.cs">
+      <DependentUpon>MakeSeats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MakeSeats.aspx.designer.cs">
+      <DependentUpon>MakeSeats.aspx</DependentUpon>
     </Compile>
     <Compile Include="Movie.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>

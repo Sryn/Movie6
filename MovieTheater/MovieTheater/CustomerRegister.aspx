@@ -10,14 +10,14 @@
             <td><asp:Label ID="Label1" runat="server" Text="Login ID"></asp:Label></td>
             <td>:&nbsp;</td>
             <td>
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="tbxStyle" Width="200px"></asp:TextBox>
+                <asp:TextBox ID="TextBox1" runat="server" CssClass="tbxStyle" Width="200px" Text="" ></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td><asp:Label ID="Label2" runat="server" Text="Password"></asp:Label></td>
             <td>:&nbsp;</td>
             <td>
-                <asp:TextBox ID="TextBox2" runat="server" CssClass="tbxStyle" Width="200px" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="TextBox2" runat="server" CssClass="tbxStyle" Width="200px" TextMode="Password" ></asp:TextBox>
             </td>
         </tr>
         <tr><td colspan="3"><asp:Label ID="lblErrLog" runat="server" CssClass="errStyle"></asp:Label></td></tr>

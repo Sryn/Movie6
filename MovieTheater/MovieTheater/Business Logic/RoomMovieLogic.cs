@@ -133,6 +133,18 @@ namespace MovieTheater.Business_Logic
             return context.SeatMovie.Where(s => s.RoomMovie_ID == rmid && s.Active_Indicator == true).ToList();
         }
 
+        public static List<SeatMovie> getSeatMovieListByJustRoomMovie(int rmid)
+        {
+            var context = new MovieTheaterEntities();
+            return context.SeatMovie.Where(s => s.RoomMovie_ID == rmid).ToList();
+        }
+
+        public static List<SeatMovie> getSeatMovieListByRoomMovieAndOccupiedFalse(int rmid)
+        {
+            var context = new MovieTheaterEntities();
+            return context.SeatMovie.Where(s => s.RoomMovie_ID == rmid && s.Occupied == false).ToList();
+        }
+
         public static RoomMovie getRoomMovieByPK(int rmid)
         {
             var context = new MovieTheaterEntities();
@@ -141,6 +153,8 @@ namespace MovieTheater.Business_Logic
 
         public static SeatMovie getSeatMovieByPK(int smid)
         {
+            System.Diagnostics.Debug.WriteLine(">>> getSeatMovieByPK(smid="+smid+")");
+
             var context = new MovieTheaterEntities();
             return context.SeatMovie.Where(s => s.SeatMovie_ID == smid).First();
         }
@@ -229,6 +243,147 @@ namespace MovieTheater.Business_Logic
                 }
             }
             return 0;
+        }
+
+        // returns the newly created SeatMovie seatMovieID or 0 if Error
+        internal static int insertNewSeatMovie(SeatMovie aSeatMovie)
+        {
+            //throw new NotImplementedException();
+
+            if (checkNoDuplicate(aSeatMovie)) {
+                SeatMovie newSeatMovie;
+
+                var context = new MovieTheaterEntities();
+
+                newSeatMovie = context.SeatMovie.Add(aSeatMovie);
+                context.SaveChanges();
+
+                System.Diagnostics.Debug.WriteLine(">>> insertNewSeatMovie newSeatMovie.SeatMovie_ID=" + newSeatMovie.SeatMovie_ID);
+
+                if (newSeatMovie != null)
+                    return newSeatMovie.SeatMovie_ID;
+                else
+                    return 0;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private static bool checkNoDuplicate(SeatMovie aSeatMovie)
+        {
+            //throw new NotImplementedException();
+
+            List<SeatMovie> seatMovieList = getSeatMovieListByJustRoomMovie(aSeatMovie.RoomMovie_ID);
+
+            if (seatMovieList.Count > 0)
+            {
+                foreach (SeatMovie aSeatMovie2 in seatMovieList)
+                {
+                    if (aSeatMovie.Seat_ID == aSeatMovie2.Seat_ID)
+                    {
+                        // duplicate found
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        internal static bool OnHoldSeat(int roomMovieID, int aSeatMovieID)
+        {
+            //throw new NotImplementedException();
+
+            if (countHowManyInstances(roomMovieID, aSeatMovieID) == 1)
+            {
+                // no error
+                var context = new MovieTheaterEntities();
+
+                SeatMovie aSeatMovie = context.SeatMovie.Where(s => s.SeatMovie_ID == aSeatMovieID).First();
+
+                if (aSeatMovie.Occupied == false)
+                {
+                    aSeatMovie.Occupied = true;
+                    aSeatMovie.Active_Indicator = false;
+
+                    context.SaveChanges();
+
+                    return true;
+                }
+
+                //RoomMovie rm = context.RoomMovie.Where(s => s.RoomMovie_ID == rmid).First();
+                //if (rm.Publish == false)
+                //{
+                //    //rm.Room_ID = rid;
+                //    rm.Date = dt;
+                //    rm.StartTime = startTime;
+                //    rm.EndTime = endTime;
+                //    //rm.Movie_ID = mid;
+                //    //rm.Price = price;
+                //    rm.Update_Datetime = DateTime.Today;
+                //    context.SaveChanges();
+                //}
+
+            }
+
+            return false;
+        }
+
+        private static int countHowManyInstances(int roomMovieID, int aSeatMovieID)
+        {
+            //throw new NotImplementedException();
+            List<SeatMovie> seatMovieList = null;
+            int count = 0;
+
+            try {
+                seatMovieList = getSeatMovieListByJustRoomMovie(roomMovieID);
+            } catch(Exception ex) {
+                System.Diagnostics.Debug.WriteLine(">> ERROR: countHowManyInstances ex.Message=" + ex.Message);
+            }
+
+            if (seatMovieList != null && seatMovieList.Count > 0)
+            {
+                foreach (SeatMovie aSeatMovie in seatMovieList)
+                {
+                    if (aSeatMovie.SeatMovie_ID == aSeatMovieID)
+                        count++;
+                }
+            }
+            else
+            {
+                return seatMovieList.Count;
+            }
+
+            return count;
+        }
+
+        internal static void FreeSeat(int aSeatMovieID)
+        {
+            //throw new NotImplementedException();
+            var context = new MovieTheaterEntities();
+
+            SeatMovie aSeatMovie = context.SeatMovie.Where(s => s.SeatMovie_ID == aSeatMovieID).First();
+
+            aSeatMovie.Occupied = false;
+            aSeatMovie.Active_Indicator = true;
+
+            context.SaveChanges();
+
+        }
+
+        internal static double getTicketPrice(int roomMovieID)
+        {
+            //throw new NotImplementedException();
+            var context = new MovieTheaterEntities();
+
+            return context.RoomMovie.Where(r => r.RoomMovie_ID == roomMovieID).First().Price;
+
         }
     }
 }
