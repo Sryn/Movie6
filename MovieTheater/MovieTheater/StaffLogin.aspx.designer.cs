@@ -10,60 +10,42 @@
 namespace MovieTheater {
     
     
-    public partial class Staff {
+    public partial class StaffLogin {
         
         /// <summary>
-        /// headStaff control.
+        /// tbxUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder headStaff;
+        protected global::System.Web.UI.WebControls.TextBox tbxUsername;
         
         /// <summary>
-        /// btnTheater control.
+        /// tbxPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnTheater;
+        protected global::System.Web.UI.WebControls.TextBox tbxPassword;
         
         /// <summary>
-        /// btnMovie control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnMovie;
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// btnShow control.
+        /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnShow;
-        
-        /// <summary>
-        /// btnRoomType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnRoomType;
-        
-        /// <summary>
-        /// bodyStaff control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder bodyStaff;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
     }
 }

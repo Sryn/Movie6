@@ -171,6 +171,7 @@ namespace MovieTheater
                     tbxEditLanguage.Text = mv.Language;
                     tbxEditSubtitle.Text = mv.Subtitle;
                     tbxEditRatings.Text = mv.Ratings.ToString();
+                    tbxEditImdb.Text = mv.IMDB_Link;
                 }
                 catch (Exception ex)
                 {
@@ -210,11 +211,21 @@ namespace MovieTheater
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            string saveDir = @"\movImage\";
+            string appPath = Request.PhysicalApplicationPath;
+            string fileName = "";
+            if (fuAddPicture.HasFile)
+            {
+                string savePath = appPath + saveDir + Server.HtmlEncode(fuAddPicture.FileName);
+                fileName = fuAddPicture.FileName;
+                fuAddPicture.SaveAs(savePath);
+            }
+
             emptyAddMsgError();
 
             //Empty Checking
             Boolean ErrorBro = false;
-            ErrorBro = addEmptyChecking(); 
+            ErrorBro = addEmptyChecking();
 
             // insert process
             if (ErrorBro == false)
@@ -223,11 +234,12 @@ namespace MovieTheater
                 {
                     Business_Logic.MovieLogic.insertMovie(
                         tbxAddName.Text,
-                        Convert.ToInt32(tbxAddDuration.Text), 
+                        Convert.ToInt32(tbxAddDuration.Text),
                         tbxAddDescription.Text,
-                        tbxAddLanguage.Text, 
+                        tbxAddLanguage.Text,
                         tbxAddSubtitle.Text,
-                        Convert.ToDouble(tbxAddRatings.Text));
+                        Convert.ToDouble(tbxAddRatings.Text),
+                        fileName, tbxAddImdb.Text);
 
                     refreshGridView();
                     hideAllPanel();
@@ -247,6 +259,16 @@ namespace MovieTheater
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+            string saveDir = @"\movImage\";
+            string appPath = Request.PhysicalApplicationPath;
+            string fileName = "";
+            if (fuEditPicture.HasFile)
+            {
+                string savePath = appPath + saveDir + Server.HtmlEncode(fuEditPicture.FileName);
+                fileName = fuEditPicture.FileName;
+                fuEditPicture.SaveAs(savePath);
+            }
+
             emptyEditMsgError();
 
             //Empty Checking
@@ -265,7 +287,8 @@ namespace MovieTheater
                         tbxEditDescription.Text,
                         tbxEditLanguage.Text,
                         tbxEditSubtitle.Text,
-                        Convert.ToDouble(tbxEditRatings.Text));
+                        Convert.ToDouble(tbxEditRatings.Text),
+                        fileName, tbxEditImdb.Text);
                     refreshGridView();
                     hideAllPanel();
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Update Movie Information Success');", true);

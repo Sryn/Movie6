@@ -19,7 +19,10 @@ namespace MovieTheater
                 lblTitle.Text = mo.Movie_Name;
                 lblName.Text = mo.Movie_Name;
                 lblDuration.Text = mo.Duration.ToString();
-                imgMovie.ImageUrl = "movImage/" + mo.PictureURL;
+                if (mo.PictureURL != "" && mo.PictureURL != null)
+                    imgMovie.ImageUrl = "movImage/" + mo.PictureURL;
+                else
+                    imgMovie.ImageUrl = "movImage/nopicture.png";
                 hlinkImdb.NavigateUrl = mo.IMDB_Link;
                 //lblImdb.Text = mo.IMDB_Link;
                 hlinkImdb.Text = mo.IMDB_Link;

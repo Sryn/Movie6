@@ -6,9 +6,16 @@
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" runat="server">
-    <div style="width: 100%; background-color: #222222">
-        <div id="menuBar" class="container" style="height: 30px; border-top: 1px solid black; border-bottom: 1px solid black; height: 50px;">
-            <div style="float: left" class="menuBarStyle">Home</div>
+    <div style="width: 100%; background-color: darkgoldenrod; position: fixed">
+        <div style="width: 100%; height: 2px; background-color: black;"></div>
+        <div id="menuBar" class="container" style="height: 30px; height: 50px;">
+            <div style="float: left; width: 170px; height: 1px;">
+                <div style="height:7px;"></div>
+                <img src="Images/d2h_cinema_logo.png" height="55" />
+            </div>
+            <div style="float: left" class="menuBarStyle">
+                <asp:LinkButton ID="btnSch" runat="server" Text="Home" CssClass="linkBarStyle" OnClick="btnSch_Click"></asp:LinkButton>
+            </div>
             <div style="float: left" class="menuBarStyle">
                 <asp:LinkButton ID="btnMovie" runat="server" Text="Movie" CssClass="linkBarStyle" OnClick="btnMovie_Click"></asp:LinkButton>
             </div>
@@ -27,14 +34,20 @@
                     <asp:LinkButton ID="btnLogout" runat="server" Text="Log Out" CssClass="linkBarStyle" OnClick="btnLogout_Click"></asp:LinkButton>
                 </div>
                 <div style="float: right" class="menuBarStyle">
-                    Welcome, <asp:Label ID="lblCustName" runat="server"></asp:Label>
+                    Welcome,
+                    <asp:Label ID="lblCustName" runat="server"></asp:Label>
                 </div>
             </asp:Panel>
             <div style="clear: both;"></div>
         </div>
+        <div style="width: 100%; height: 2px; background-color: black;"></div>
     </div>
-    <div id="content" class="container" style="background-color: #F6F6F6; padding-bottom: 20px; border-left:2px solid black; border-right:2px solid black;">
+    <div style="height: 50px;"></div>
+    <div id="content" class="container" style="background-color: #F6F6F6; padding-bottom: 20px; border-left: 2px solid black; border-right: 2px solid black;">
         <asp:ContentPlaceHolder ID="bodyCust" runat="server">
         </asp:ContentPlaceHolder>
+    </div>
+    <div style="margin:auto; width:1004px;">
+        <div style="height:2px; width:100%; background-color:black"></div>
     </div>
 </asp:Content>

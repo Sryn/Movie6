@@ -22,6 +22,15 @@ namespace MovieTheater {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder headCust;
         
         /// <summary>
+        /// btnSch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnSch;
+        
+        /// <summary>
         /// btnMovie control.
         /// </summary>
         /// <remarks>

@@ -105,15 +105,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Confirm.aspx" />
     <Content Include="CRegister.aspx" />
+    <Content Include="CustomerRegister.aspx" />
     <Content Include="default.aspx" />
+    <Content Include="Images\back.png" />
     <Content Include="Images\calendar.png" />
+    <Content Include="Images\d2h_cinema_logo.png" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\edit1.png" />
+    <Content Include="Images\header.png" />
     <Content Include="Images\movie.ico" />
     <Content Include="Images\next.png" />
     <Content Include="Login.aspx" />
-    <Content Include="MakeSeats.aspx" />
     <Content Include="MovieDetail.aspx" />
     <Content Include="MovieList.aspx" />
     <Content Include="MoviePage.aspx" />
@@ -122,10 +126,11 @@
     <Content Include="movImage\deadpool.jpg" />
     <Content Include="movImage\kungfu.jpg" />
     <Content Include="movImage\suicide.jpg" />
-    <Content Include="DesignTheatreSeatMap.aspx" />
     <Content Include="RoomMoviePage.aspx" />
     <Content Include="RoomPage.aspx" />
     <Content Include="RoomTypePage.aspx" />
+    <Content Include="SeatSelection.aspx" />
+    <Content Include="StaffLogin.aspx" />
     <Content Include="Styles\CustStyles.css" />
     <Content Include="Styles\StaffStyles.css" />
     <Content Include="Styles\Styles.css" />
@@ -148,6 +153,13 @@
     <Compile Include="Business Logic\SeatLogic.cs" />
     <Compile Include="Business Logic\TheaterLogic.cs" />
     <Compile Include="Business Logic\UserLogic.cs" />
+    <Compile Include="Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CRegister.aspx.cs">
       <DependentUpon>CRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,6 +176,13 @@
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegister.aspx.cs">
+      <DependentUpon>CustomerRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerRegister.aspx.designer.cs">
+      <DependentUpon>CustomerRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -185,13 +204,6 @@
     </Compile>
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MakeSeats.aspx.cs">
-      <DependentUpon>MakeSeats.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MakeSeats.aspx.designer.cs">
-      <DependentUpon>MakeSeats.aspx</DependentUpon>
     </Compile>
     <Compile Include="Movie.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
@@ -239,13 +251,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MovieTheaterEDM.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DesignTheatreSeatMap.aspx.cs">
-      <DependentUpon>DesignTheatreSeatMap.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DesignTheatreSeatMap.aspx.designer.cs">
-      <DependentUpon>DesignTheatreSeatMap.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
@@ -283,12 +288,26 @@
     <Compile Include="SeatMovie.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="SeatSelection.aspx.cs">
+      <DependentUpon>SeatSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeatSelection.aspx.designer.cs">
+      <DependentUpon>SeatSelection.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Staff.master.cs">
       <DependentUpon>Staff.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Staff.master.designer.cs">
       <DependentUpon>Staff.master</DependentUpon>
+    </Compile>
+    <Compile Include="StaffLogin.aspx.cs">
+      <DependentUpon>StaffLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffLogin.aspx.designer.cs">
+      <DependentUpon>StaffLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>MovieTheaterEDM.tt</DependentUpon>

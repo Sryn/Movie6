@@ -88,6 +88,16 @@
                 </td>
             </tr>
             <tr>
+                <td>Picture</td>
+                <td>:&nbsp;</td>
+                <td><asp:FileUpload ID="fuAddPicture" runat="server" /></td>
+            </tr>
+            <tr>
+                <td>IMDB Link</td>
+                <td>:&nbsp;</td>
+                <td><asp:TextBox ID="tbxAddImdb" runat="server" CssClass="tbxStyle" Width="300px"></asp:TextBox></td>
+            </tr>
+            <tr>
                 <td colspan="3" style="padding-top: 15px;">
                     <asp:Button ID="btnSubmit" CssClass="btnStyle" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
                     <asp:Button ID="btnClose" CssClass="btnStyle" runat="server" Text="Close" OnClick="btnClose_Click" />
@@ -149,6 +159,16 @@
                     <asp:TextBox ID="tbxEditRatings" runat="server" CssClass="tbxStyle" Width="50px"></asp:TextBox>
                     <asp:Label ID="lblEERatings" runat="server" CssClass="errStyle"></asp:Label>
                 </td>
+            </tr>
+            <tr>
+                <td>Picture</td>
+                <td>:&nbsp;</td>
+                <td><asp:FileUpload ID="fuEditPicture" runat="server" /></td>
+            </tr>
+            <tr>
+                <td>IMDB Link</td>
+                <td>:&nbsp;</td>
+                <td><asp:TextBox ID="tbxEditImdb" runat="server" CssClass="tbxStyle" Width="300px"></asp:TextBox></td>
             </tr>
             <tr>
                 <td colspan="3" style="padding-top: 15px;">

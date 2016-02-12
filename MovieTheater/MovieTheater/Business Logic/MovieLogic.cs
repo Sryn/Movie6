@@ -20,7 +20,7 @@ namespace MovieTheater.Business_Logic
         }
 
         public static void insertMovie(string name, int duration, string description,
-            string language, string subtitle, double ratings)
+            string language, string subtitle, double ratings, string pictureURl, string imdbLink)
         {
             using (var context = new MovieTheaterEntities())
             {
@@ -31,6 +31,8 @@ namespace MovieTheater.Business_Logic
                 mv.Language = language;
                 mv.Subtitle = subtitle;
                 mv.Ratings = ratings;
+                mv.IMDB_Link = imdbLink;
+                mv.PictureURL = pictureURl;
                 mv.Active_Indicator = true;
                 mv.Update_Datetime = DateTime.Today;
                 context.Movie.Add(mv);
@@ -39,7 +41,7 @@ namespace MovieTheater.Business_Logic
         }
 
         public static void updateMovie(int mid, string name, int duration,
-            string description, string language, string subtitle, double ratings)
+            string description, string language, string subtitle, double ratings, string pictureURl, string imdbLink)
         {
             using (var context = new MovieTheaterEntities())
             {
@@ -50,6 +52,9 @@ namespace MovieTheater.Business_Logic
                 mv.Language = language;
                 mv.Subtitle = subtitle;
                 mv.Ratings = ratings;
+                if (pictureURl != "" && pictureURl != null)
+                    mv.PictureURL = pictureURl;
+                mv.IMDB_Link = imdbLink;
                 mv.Update_Datetime = DateTime.Today;
                 context.SaveChanges();
             }

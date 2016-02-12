@@ -16,6 +16,7 @@
     font-size:36px;
     padding-bottom:30px;
     padding-top:10px;
+    color:purple;
 }
 
 .subTitleLeft{
@@ -46,4 +47,10 @@
     padding-right:7px;
     padding-top:3px;
     padding-bottom:3px;
+}
+
+.linkBarStyle{
+    color:white;
+    font-size:18px;
+    text-decoration:none;
 }

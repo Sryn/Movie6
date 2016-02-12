@@ -10,60 +10,60 @@
 namespace MovieTheater {
     
     
-    public partial class Staff {
+    public partial class SeatSelection {
         
         /// <summary>
-        /// headStaff control.
+        /// MovieName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder headStaff;
+        protected global::System.Web.UI.WebControls.Label MovieName;
         
         /// <summary>
-        /// btnTheater control.
+        /// TheatreName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnTheater;
+        protected global::System.Web.UI.WebControls.Label TheatreName;
         
         /// <summary>
-        /// btnMovie control.
+        /// Date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnMovie;
+        protected global::System.Web.UI.WebControls.Label Date;
         
         /// <summary>
-        /// btnShow control.
+        /// Time control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnShow;
+        protected global::System.Web.UI.WebControls.Label Time;
         
         /// <summary>
-        /// btnRoomType control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnRoomType;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// bodyStaff control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder bodyStaff;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

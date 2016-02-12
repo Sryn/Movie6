@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MovieTheater
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class RoomMoviePage : System.Web.UI.Page
     {
         Movie m = new Movie();
         protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +23,9 @@ namespace MovieTheater
                 roomddl.DataSource = Business_Logic.RoomLogic.getRoomListByTheater(Convert.ToInt32(theaterddl.SelectedValue));
                 roomddl.DataTextField = "Room_Name";
                 roomddl.DataValueField = "Room_ID";
-                roomddl.DataBind();               
+                roomddl.DataBind();
+
+                pnlGrid.Visible = false;
             }
         }
 
@@ -39,6 +41,7 @@ namespace MovieTheater
         {
             try
             {
+                pnlGrid.Visible = true;
                 refreshgridview();
             }
             catch (Exception ex)
@@ -90,8 +93,6 @@ namespace MovieTheater
             addetlb.Text = final.ToString(@"hh\:mm");
         }
 
-
-
         protected void roommoviegdv_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int rmid = Convert.ToInt32(roommoviegdv.Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Text);
@@ -107,16 +108,16 @@ namespace MovieTheater
                     Calendar1.Visible = false;
                     pnlAdd.Visible = false;
                     pnlEdit.Visible = true;
-                    rmidtbx.Text = roommoviegdv.Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Text;
+                    hfMID.Value = roommoviegdv.Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Text;
                     rntbx.Text = roommoviegdv.Rows[Convert.ToInt32(e.CommandArgument)].Cells[1].Text;
+                    hfRID.Value = Business_Logic.RoomMovieLogic.getRoomMovieByPK(Convert.ToInt32(hfMID.Value)).Room_ID.ToString();
                     mntbx.Text = roommoviegdv.Rows[Convert.ToInt32(e.CommandArgument)].Cells[5].Text;
                     pricetbx.Text = Convert.ToString(rm.Price);
-                    updatetbx.Text = Convert.ToString(rm.Update_Datetime);
                     String tm = (TimeSpan.Parse(roommoviegdv.Rows[Convert.ToInt32(e.CommandArgument)].Cells[3].Text)).ToString(@"hh\:mm");
                     editstddl.SelectedValue = tm;
 
                     TimeSpan st = TimeSpan.Parse(editstddl.SelectedValue);
-                    RoomMovie rm1 = Business_Logic.RoomMovieLogic.getRoomMovieByPK(Convert.ToInt32(rmidtbx.Text));
+                    RoomMovie rm1 = Business_Logic.RoomMovieLogic.getRoomMovieByPK(Convert.ToInt32(hfMID.Value));
                     Movie m = Business_Logic.MovieLogic.getMovieByPK(rm1.Movie_ID);
                     int dur = m.Duration;
                     int hf = dur / 30;
@@ -124,6 +125,8 @@ namespace MovieTheater
                     int right = hf % 2 + 1;
                     TimeSpan final = new TimeSpan(st.Hours + left, st.Minutes + right * 30, 0);
                     editetlb.Text = final.ToString(@"hh\:mm");
+                    editcalendartbx.Text = rm1.Date.ToShortDateString();
+                    Calendar2.SelectedDate = rm1.Date;
                 }
             }
             if (e.CommandName == "DeleteComm")
@@ -194,17 +197,17 @@ namespace MovieTheater
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Date is not selected yet.');", true);
             }
-            else if (Business_Logic.RoomMovieLogic.confirmRoomMovieByDateAndRoom(Convert.ToInt32(rmidtbx.Text), Calendar2.SelectedDate, TimeSpan.Parse(editstddl.SelectedValue), TimeSpan.Parse(editetlb.Text)))
+            else if (Business_Logic.RoomMovieLogic.confirmEdit(Convert.ToInt32(hfMID.Value), Convert.ToInt32(hfRID.Value), Calendar2.SelectedDate, TimeSpan.Parse(editstddl.SelectedValue), TimeSpan.Parse(editetlb.Text)))
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Time conflict with other roommovie.');", true);
-            }
-            else
-            {
-                int rmid = Convert.ToInt32(rmidtbx.Text);
+                int rmid = Convert.ToInt32(hfMID.Value);
                 Business_Logic.RoomMovieLogic.updateRoomMovie(rmid, Calendar2.SelectedDate, TimeSpan.Parse(editstddl.SelectedValue), TimeSpan.Parse(editetlb.Text));
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Room movie updated successfully.');", true);
                 pnlEdit.Visible = false;
                 refreshgridview();
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Time conflict with other roommovie.');", true);
             }
         }
 
@@ -218,7 +221,6 @@ namespace MovieTheater
             calendartbx.Text = Calendar1.SelectedDate.ToShortDateString();
             Calendar1.Visible = false;
         }
-
 
         protected void Calendar2_SelectionChanged(object sender, EventArgs e)
         {
@@ -246,7 +248,7 @@ namespace MovieTheater
         protected void editstddl_SelectedIndexChanged(object sender, EventArgs e)
         {
             TimeSpan st = TimeSpan.Parse(editstddl.SelectedValue);
-            RoomMovie rm = Business_Logic.RoomMovieLogic.getRoomMovieByPK(Convert.ToInt32(rmidtbx.Text));
+            RoomMovie rm = Business_Logic.RoomMovieLogic.getRoomMovieByPK(Convert.ToInt32(hfMID.Value));
             Movie m = Business_Logic.MovieLogic.getMovieByPK(rm.Movie_ID);
             int dur = m.Duration;
             int hf = dur / 30;
@@ -259,8 +261,10 @@ namespace MovieTheater
 
         protected void refreshgridview()
         {
+            roommoviegdv.Columns[0].Visible = true;
             roommoviegdv.DataSource = Business_Logic.RoomMovieLogic.getRoomMovieByDateandRoom(Convert.ToInt32(roomddl.SelectedValue), Calendar1.SelectedDate);
             roommoviegdv.DataBind();
+            roommoviegdv.Columns[0].Visible = false;
         }
 
     }

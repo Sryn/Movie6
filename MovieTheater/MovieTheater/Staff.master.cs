@@ -11,7 +11,28 @@ namespace MovieTheater
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //login checking, if login expired go to login page, maybe??
+            //if (Session["StaffID"] == null)
+            //    Response.Redirect("StaffLogin.aspx");
+        }
+
+        protected void btnTheater_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("TheaterPage.aspx");
+        }
+
+        protected void btnMovie_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MoviePage.aspx");
+        }
+
+        protected void btnShow_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RoomMoviePage.aspx");
+        }
+
+        protected void btnRoomType_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RoomTypePage.aspx");
         }
     }
 }

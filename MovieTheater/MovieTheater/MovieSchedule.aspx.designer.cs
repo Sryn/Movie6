@@ -13,6 +13,15 @@ namespace MovieTheater {
     public partial class MovieSchedule {
         
         /// <summary>
+        /// rbtnAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbtnAll;
+        
+        /// <summary>
         /// rbtnTheater control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace MovieTheater {
         protected global::System.Web.UI.WebControls.DropDownList ddlTheater;
         
         /// <summary>
+        /// tbxTheater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxTheater;
+        
+        /// <summary>
         /// rbtnMovie control.
         /// </summary>
         /// <remarks>
@@ -38,5 +56,41 @@ namespace MovieTheater {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton rbtnMovie;
+        
+        /// <summary>
+        /// ddlMovie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMovie;
+        
+        /// <summary>
+        /// tbxMovie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxMovie;
+        
+        /// <summary>
+        /// btnSeach control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSeach;
+        
+        /// <summary>
+        /// gvwMovieSchedule control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvwMovieSchedule;
     }
 }

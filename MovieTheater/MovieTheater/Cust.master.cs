@@ -44,5 +44,10 @@ namespace MovieTheater
         {
             Response.Redirect("MovieList.aspx");
         }
+
+        protected void btnSch_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MovieSchedule.aspx");
+        }
     }
 }

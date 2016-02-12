@@ -13,10 +13,58 @@ namespace MovieTheater.Business_Logic
             return context.RoomMovie.Where(s => s.Active_Indicator == true).ToList();
         }
 
+        public static int getRoomMovieId(DateTime d, TimeSpan tmsp)
+        {
+            var context = new MovieTheaterEntities();
+            return context.RoomMovie.Where(s => s.Date == d && s.StartTime == tmsp).Select(v => v.RoomMovie_ID).First();
+        }
+
         public static List<RoomMovie> getRoomMovieByDateandRoom(int roomID, DateTime d)
         {
             var context = new MovieTheaterEntities();
             return context.RoomMovie.Where(s => s.Room_ID == roomID && s.Date == d && s.Active_Indicator == true).ToList();
+        }
+
+        public static List<RoomMovie> getTodayRoomMovie()
+        {
+            var context = new MovieTheaterEntities();
+            return context.RoomMovie.Where(s => s.Active_Indicator == true && s.Date == DateTime.Today && s.Publish == true).ToList();
+        }
+
+        public static List<RoomMovie> getTodayRoomMovieByTheater(int theaterID)
+        {
+            var context = new MovieTheaterEntities();
+            return context.RoomMovie.Where(s => s.Room.Theater_ID == theaterID && s.Active_Indicator == true && s.Date == DateTime.Today && s.Publish == true).ToList();
+        }
+
+        public static List<RoomMovie> getTodayRoomMovieByMovie(int movieID)
+        {
+            var context = new MovieTheaterEntities();
+            return context.RoomMovie.Where(s => s.Movie_ID == movieID && s.Active_Indicator == true && s.Date == DateTime.Today && s.Publish == true).ToList();
+        }
+
+        public static List<Movie> getTodayMovie()
+        {
+            var context = new MovieTheaterEntities();
+            var mList = context.RoomMovie.Where(rm => rm.Date == DateTime.Today && rm.Publish == true).GroupBy(rm => rm.Movie_ID);
+            List<Movie> lm = new List<Movie>();
+            foreach (var mm in mList)
+            {
+                lm.Add(context.Movie.Where(s=>s.Movie_ID == mm.Key).First());
+            }
+            return lm;
+        }
+
+        public static List<Theater> getTodayTheater()
+        {
+            var context = new MovieTheaterEntities();
+            var tList = context.RoomMovie.Where(rm => rm.Date == DateTime.Today && rm.Publish == true).GroupBy(rm => rm.Room.Theater_ID);
+            List<Theater> lt = new List<Theater>();
+            foreach (var tt in tList)
+            {
+                lt.Add(context.Theater.Where(s => s.Theater_ID== tt.Key).First());
+            }
+            return lt;
         }
 
         public static List<Theater> getThByMovie(int mid)
@@ -53,6 +101,15 @@ namespace MovieTheater.Business_Logic
         {
             var context = new MovieTheaterEntities();
             var a = context.RoomMovie.Where(s => s.Room_ID == roomID && s.Date == d && s.Active_Indicator == true && ((s.StartTime >= starttime && s.StartTime < endtime) || (endtime >= s.EndTime && starttime < s.EndTime))).ToList();
+            if (a.Count == 0)
+                return true;
+            return false;
+        }
+
+        public static bool confirmEdit(int rmID, int roomID, DateTime d, TimeSpan starttime, TimeSpan endtime)
+        {
+            var context = new MovieTheaterEntities();
+            var a = context.RoomMovie.Where(s => s.RoomMovie_ID != rmID && s.Room_ID == roomID && s.Date == d && s.Active_Indicator == true && ((s.StartTime >= starttime && s.StartTime < endtime) || (endtime >= s.EndTime && starttime < s.EndTime))).ToList();
             if (a.Count == 0)
                 return true;
             return false;
